@@ -1,0 +1,27 @@
+a=input().strip()
+q=""
+for i in range(len(a)):
+    for j in range(i,len(a)):
+        b=a[i:j+1]
+        if(len(b)%2!=0):
+            continue
+        c=0
+        d=0
+        for j in b:
+            if j=="1":
+                c+=1
+            elif j=="0":
+                d+=1
+                
+        e=b[0:len(b)//2]
+        f=b[len(b)//2:]
+        count_first=e.count("1")
+        if(count_first==c and "0" not in e or count_first==0 and "1" not in e and c==d):
+            #print(b)
+            if(len(q)<len(b)):
+                q=b
+            
+if(q==""):
+    print(-1)
+else:
+    print(q)
